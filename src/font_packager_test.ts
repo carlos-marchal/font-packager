@@ -81,7 +81,6 @@ Deno.test(
       assertEquals(outputFiles.length, expected.length);
       assertArrayIncludes(outputFiles, expected);
     } finally {
-      console.log("here");
       await Deno.remove(tmpDirPath, { recursive: true });
       for (const file of files) {
         file.close();
