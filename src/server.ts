@@ -18,7 +18,11 @@ export interface HTTPStaticServer {
 
 class DefaultHTTPStaticServer implements HTTPStaticServer {
   async serveDir(request: Request, dir: string): Promise<Response> {
-    return await serveDir(request, { fsRoot: dir, showDirListing: true });
+    return await serveDir(request, {
+      fsRoot: dir,
+      showDirListing: true,
+      quiet: true,
+    });
   }
 }
 
