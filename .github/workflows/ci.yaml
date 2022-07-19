@@ -35,7 +35,7 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -e INTEGRATION_TEST=true deno ${{ env.IMAGE_NAME }}:test test -A
+          docker run --rm -e INTEGRATION_TEST=true ${{ env.IMAGE_NAME }}:test deno test -A
 
       - name: Build and push
         uses: docker/build-push-action@v3
