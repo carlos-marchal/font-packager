@@ -1,5 +1,5 @@
 FROM denoland/deno:1.23.4
-RUN apt-get update && apt-get upgrade && apt-get install -y sfnt2woff-zopfli woff2
+RUN apt-get update && apt-get upgrade && apt-get install -y sfnt2woff-zopfli woff2 zip
 WORKDIR /app
 COPY . .
 RUN deno cache src/*.ts
