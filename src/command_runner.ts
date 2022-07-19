@@ -11,10 +11,26 @@ export class DefaultCommandRunner implements CommandRunner {
       cwd,
     });
     try {
-      await process.status();
+      const status = await process.status();
+      if (!status.success) {
+        const stderrRaw = await process.stderrOutput();
+        const stderrString = new TextDecoder().decode(stderrRaw);
+        throw new CommandExecutionError(command, stderrString);
+      } else {
+        process.stderr.close();
+      }
     } finally {
-      process.stderr.close();
       process.close();
     }
+  }
+}
+
+export class CommandExecutionError extends Error {
+  command: string[];
+  stederr: string;
+  constructor(command: string[], stderr: string) {
+    super(`error executing command "${command.join(" ")}":\n${stderr}`);
+    this.command = command;
+    this.stederr = stderr;
   }
 }
