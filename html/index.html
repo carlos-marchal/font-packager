@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Font Converter</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Fontface Generator & Converter</h1>
+    <form method="post" action="/" enctype="multipart/form-data">
+      <label>
+        <div>Input the name of your font the way you want to use it in CSS. For example, to use it like<br/><code>font-family: "Cool Font", sans-serif;</code><br/>input "Cool Font".</code></div>
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        <div>Select all TTF files corresponding to the font</div>
+        <input type="file" name="files" multiple accept=".ttf" required />
+      </label>
+      <button type="submit">Convert</button>
+    </form>
+  </body>
+</html>
