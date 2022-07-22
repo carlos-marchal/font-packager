@@ -1,5 +1,7 @@
 ## Font packager
 
+[![CI](https://img.shields.io/github/workflow/status/carlos-marchal/font-packager/CI?label=Build%2C%20test%20%26%20deploy&style=for-the-badge)](https://github.com/carlos-marchal/font-packager/actions/workflows/ci.yaml)
+
 Font Packager is a web based tool that converts TTF fonts to web formats (WOFF, WOFF2)
 and bundles them with generated CSS.
 
