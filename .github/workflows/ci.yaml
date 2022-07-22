@@ -68,4 +68,4 @@ jobs:
         with:
           image: ${{ env.GAR_TAG }}:latest
           service: font-packager
-          GOOGLE_CLOUD_REGION: europe-west1
+          region: ${{ env.GAR_REGION }}
