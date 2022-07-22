@@ -16,7 +16,7 @@ import { FontPackagerService, FontSource } from "./font_packager.ts";
 // filesystem to run, we will just check it directly in an integration test
 Deno.test(
   "FontPackagerService integration test",
-  { ignore: Deno.env.get("INTEGRATION_TEST") === undefined },
+  { ignore: Deno.env.get("INTEGRATION_TESTS") === undefined },
   async () => {
     const commandRunner = new DefaultCommandRunner();
     const cssBuilder = new DefaultCSSBuilder();

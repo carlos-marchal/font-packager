@@ -52,7 +52,7 @@ jobs:
           tags: ${{ env.GHCR_TAG }}:test
 
       - name: Test
-        run: docker run --rm -e INTEGRATION_TEST=true ${{ env.GHCR_TAG }}:test deno test -A
+        run: docker run --rm -e INTEGRATION_TESTS=true ${{ env.GHCR_TAG }}:test deno test -A
 
       - name: Build and push to registries
         uses: docker/build-push-action@v3
