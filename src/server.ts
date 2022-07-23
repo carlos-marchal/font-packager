@@ -74,7 +74,8 @@ export class HTTPAppServer {
       })),
     };
     const { zipStream } = await this.#packager.package(input);
-    const filename = input.name.replace(/[ _-]g/, "-").toLowerCase();
+    const filename = input.name.replace(/[ _-]/g, "-").toLowerCase();
+    console.log(filename);
     return new Response(readableStreamFromReader(zipStream), {
       headers: {
         "content-type": "application/zip",

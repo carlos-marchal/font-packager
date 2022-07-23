@@ -49,7 +49,7 @@ export class FontPackagerService implements FontPackagerInterface {
     const fonts = this.#getFontInfo(input.sources);
     const cwd = await Deno.makeTempDir({ prefix: "font-packager-" });
     try {
-      const zipName = input.name.replace(/[ _-]g/, "-").toLowerCase();
+      const zipName = input.name.replace(/[ _-]/g, "-").toLowerCase();
       const zipBuildPath = path.join(cwd, zipName);
       await Deno.mkdir(zipBuildPath);
       await Promise.all([
